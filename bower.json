@@ -1,0 +1,22 @@
+{
+  "name": "workarea",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "vtagal"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "font-awesome-sass": "^4.7.0",
+    "bootstrap": "^3.3.7"
+  }
+}
