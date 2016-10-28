@@ -8,7 +8,8 @@ var gulp = require('gulp'),
     concatCss = require('gulp-concat-css'),
     spritesmith = require('gulp.spritesmith'),
     iconfont = require('gulp-iconfont'),
-    iconfontCss = require('gulp-iconfont-css');
+    iconfontCss = require('gulp-iconfont-css'),
+    pug = require('gulp-pug');
 
 var bowerPath = './bower_components/';
 
@@ -112,6 +113,15 @@ gulp.task('iconfont', function(){
       fontName: fontName
      }))
     .pipe(gulp.dest(iconPath.dst));
+});
+
+
+// Views Tasks
+
+gulp.task('views', function buildHTML() {
+  return gulp.src('./views/pug/**/*.pug')
+  .pipe(pug())
+  .pipe(gulp.dest('./views/html/'));
 });
 
 // General Tasks

@@ -16,6 +16,7 @@
     "gulp-concat-css": "^2.3.0",
     "gulp-copy": "0.0.2",
     "gulp-iconfont-css": "^2.1.0",
+    "gulp-pug": "^3.1.0",
     "gulp-sass": "^2.3.2",
     "gulp-webserver": "^0.9.1",
     "gulp.spritesmith": "^6.2.1"
