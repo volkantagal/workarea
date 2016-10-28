@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass')
     copy = require('gulp-copy'),
     concatCss = require('gulp-concat-css'),
-    spritesmith = require('gulp.spritesmith');
+    spritesmith = require('gulp.spritesmith'),
+    iconfont = require('gulp-iconfont'),
+    iconfontCss = require('gulp-iconfont-css');
 
 var bowerPath = './bower_components/';
 
@@ -87,14 +89,49 @@ gulp.task('sprite', function () {
   return spriteData.pipe(gulp.dest(imgPath.dstCss));
 });
 
+// FontIcon
+
+var runTimestamp = Math.round(Date.now()/1000);
+
+var iconPath = {
+    src: './images/svg/*.svg',
+    dst: './styles/fonts/myFont/',
+    dstCss: 'scss/myfont.scss'
+};
+
+var fontName = 'myfont';
+
+gulp.task('iconfont', function(){
+  gulp.src([iconPath.src])
+    .pipe(iconfontCss({
+      fontName: fontName,
+      targetPath: iconPath.dstCss,
+      fontPath: '../'
+    }))
+    .pipe(iconfont({
+      fontName: fontName
+     }))
+    .pipe(gulp.dest(iconPath.dst));
+});
+
+// General Tasks
+
 gulp.task('styles', function(callback) {
   runSequence(['sass', 'copy'], 'concatCss');
 });
 
-gulp.task('script', function(callback) {
+gulp.task('scripts', function(callback) {
   runSequence('babel', 'browserify', 'concat');
 });
 
 gulp.task('sprites', function(callback) {
   runSequence('sprite', 'styles');
+});
+
+gulp.task('fonts', function(callback) {
+  runSequence('iconfont', 'styles');
+});
+
+gulp.task('default', function(callback) {
+  runSequence('sprites', ['styles', 'scripts']);
 });
