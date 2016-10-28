@@ -5,3 +5,7 @@ $bower-path: "../../bower_components";
 
 @import 'common/normalize.scss';
 @import 'sprite/sprite.scss';
+
+.icon-email {
+  @include sprite($chrome);
+}

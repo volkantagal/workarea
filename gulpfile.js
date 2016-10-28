@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     spritesmith = require('gulp.spritesmith'),
     iconfont = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css'),
-    pug = require('gulp-pug');
+    pug = require('gulp-pug'),
+    webserver = require('gulp-webserver'),
+    watch = require('gulp-watch');
 
 var bowerPath = './bower_components/';
 
@@ -40,6 +42,11 @@ gulp.task('sass:watch', function () {
 gulp.task('copy', function () {
 	return gulp.src(stylePath.copySrc)
   	.pipe(copy('./styles/fonts/font-awesome', {prefix: 5}).on('error', sass.logError));
+});
+
+gulp.task('copyImage', function () {
+	return gulp.src('./styles/scss/sprite/sprite.png')
+  	.pipe(copy('./styles/css/', {prefix: 3}).on('error', sass.logError));
 });
 
 gulp.task('concatCss', function () {
@@ -87,6 +94,7 @@ gulp.task('sprite', function () {
     imgName: 'sprite.png',
     cssName: 'sprite.scss'
   }));
+
   return spriteData.pipe(gulp.dest(imgPath.dstCss));
 });
 
@@ -107,7 +115,7 @@ gulp.task('iconfont', function(){
     .pipe(iconfontCss({
       fontName: fontName,
       targetPath: iconPath.dstCss,
-      fontPath: '../'
+      fontPath: '../fonts/myFont/'
     }))
     .pipe(iconfont({
       fontName: fontName
@@ -115,13 +123,24 @@ gulp.task('iconfont', function(){
     .pipe(gulp.dest(iconPath.dst));
 });
 
-
 // Views Tasks
 
 gulp.task('views', function buildHTML() {
   return gulp.src('./views/pug/**/*.pug')
   .pipe(pug())
   .pipe(gulp.dest('./views/html/'));
+});
+
+// Server
+
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      livereload: true,
+      directoryListing: true,
+      open: '/views/html/index.html',
+      https: false
+    }));
 });
 
 // General Tasks
@@ -135,11 +154,19 @@ gulp.task('scripts', function(callback) {
 });
 
 gulp.task('sprites', function(callback) {
-  runSequence('sprite', 'styles');
+  runSequence('sprite', 'copyImage', 'styles');
 });
 
 gulp.task('fonts', function(callback) {
   runSequence('iconfont', 'styles');
+});
+
+gulp.task('serve', function(callback) {
+  runSequence(['views', 'sass', 'copy'], ['babel', 'browserify', 'concat'], 'webserver')
+
+  return watch(['./styles/scss/**/*.scss', './scripts/**/*.js', './views/pug/**/*.pug'], function () {
+      runSequence(['views', 'sass', 'copy'], ['babel', 'browserify', 'concat'])
+  });
 });
 
 gulp.task('default', function(callback) {
