@@ -1,0 +1,99 @@
+.contact {
+		position: relative;
+		background-color: #1C1B1B;
+		posistion: relative;
+		z-index: 1;
+
+		padding-bottom: 64px;
+
+		@media only screen and (max-width: 480px) {
+			padding-bottom: 32px;
+		}
+
+	.page-container {
+		height: auto !important;
+
+		.col-sm-12 {
+			@media only screen and (max-width: 480px) {
+				padding: 0px;
+			}
+		}
+	}
+
+	.content {
+		font-size: 22px;
+
+		@media only screen and (max-width: 480px) {
+			margin-top: 24px !important;
+			font-size: 16px;
+		}
+	}
+
+	.adresses {
+
+		.adress-column {
+			color: #D8D8D8;
+
+			@media only screen and (max-width: 1024px) {
+				padding-left: 0px;
+				padding-bottom: 16px;
+			}
+
+			&:first-child {
+				padding-left: 0px;
+			}
+
+			&:last-child {
+				padding-right: 0px;
+			}
+		}
+
+		.social {
+			ul {
+				padding: 0px;
+				margin: 0px;
+
+				li {
+					margin-right: 8px;
+					list-style: none;
+					float: left;
+
+					a {
+						display: block;
+					}
+
+					.facebook {
+						@include sprite($facebook);
+					}
+
+					.twitter {
+						@include sprite($twitter);
+					}
+
+					.linkedin {
+						@include sprite($linkedin);
+					}
+				}
+			}
+		}
+	}
+}
+
+.contact-bottom {
+	
+	.bottom-image {
+		width: calc(100% - 342px);
+		height: auto;
+	}
+}
+
+.contact-right {
+	position: absolute;
+	top: 74px;
+	right: 0px;
+
+	.bottom-image {
+		width: 100%;
+		height: auto;
+	}
+}

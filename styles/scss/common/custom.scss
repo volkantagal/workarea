@@ -1,0 +1,58 @@
+html {
+	overflow: hidden;
+}
+
+body {
+	font-family: $primary-font;
+	background-color: #1C1B1B !important;
+	overflow: hidden;
+
+	.page-container {
+		color: $primary-font-color;
+		margin-top: 32px;
+		position: relative;
+
+		.small-text {
+			max-width: 480px;
+			margin: 0 auto;
+			font-size: 15px;
+		}
+
+		.caption {
+			font-size: 24px;
+
+			@media only screen and (max-width : 768px) {
+				margin-top: 0px !important;
+			}
+		}
+	}
+
+	.container {
+		max-width: 1200px;
+		width: auto !important;
+
+		@media only screen and (min-width : 481px) and (max-width: 1199px) {
+			padding: 0 24px;
+		}
+	}
+
+	.m8 {
+		margin-top: 8px;
+	}
+
+	.m16 {
+		margin-top: 16px;
+	}
+
+	.m24 {
+		margin-top: 24px;
+	}
+
+	.m48 {
+		margin-top: 48px;
+	}
+
+	.m128 {
+		margin-top: 128px;
+	}
+}

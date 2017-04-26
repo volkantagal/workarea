@@ -19,7 +19,8 @@
     "gulp-pug": "^3.1.0",
     "gulp-sass": "^2.3.2",
     "gulp-webserver": "^0.9.1",
-    "gulp.spritesmith": "^6.2.1"
+    "gulp.spritesmith": "^6.2.1",
+    "jquery.easing": "^1.4.1"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.15.0",

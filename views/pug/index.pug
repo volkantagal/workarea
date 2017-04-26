@@ -1,16 +1,113 @@
-<!doctype html>
-html(lang="en")
-head
-  meta(charset="utf-8")
-  title Volkan Tagal
-  meta(name="description" content="The HTML5 Herald")
-  meta(name="author" content="SitePoint")
-  link(rel="stylesheet" href="../../styles/css/main.css?v=1.0")
+extends layout/layout.pug
+block content
+  .homepage
+    .container
+      .page-container
+        #pageTitle
+          .text-center.small-text
+            | Connecting creative, knowledge and commerce to transform brands and grow businesses
+          .caption.m48
+            | Featured Works
+        .content-area
+          .shapes 
+            span.first W
+              span.hide-text.none-visible ISITOR
+            canvas#w(width="130" height="190")
+          .shapes
+            span.first V
+              span.hide-text.none-visible OSU
+            canvas#v(width="130" height="190")
+          .shapes
+            span.first N
+              span.hide-text.none-visible otion's 
+              span.shapes-small M
+              span.hide-text.none-visible otion
+            canvas#n(width="130" height="190")
+          .shapes
+            span.first T
+              span.hide-text.none-visible ASKNIGHT
+            canvas#t(width="130" height="190")
 
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+        .w-content
+          p İşletmelerin, kurum veya kuruluşların, ziyaretçilerine sundukları internet hizmetini, bir sosyal ağ hizmetine dönüştüren, web tabanlı müşteri ilişkileri otomasyonu ve yeni nesil elektronik pazarlama aracıdır.
+          p
+            ul.home-list
+              li Hızlı ve Güvenli İnternet Erişimi
+              li Sosyal WiFi
+              li İstatistik Yönetimi    
+              li Kesintisiz İletişim Ağı
+              li Sosyal Yönelim Analizleri
+          .triangles
+            img(class="t-1 right" src="../../images/png/triangles/1.png")
+            img(class="t-2 right" src="../../images/png/triangles/2.png")
+            img(class="t-3 right-2" src="../../images/png/triangles/3.png")
+            img(class="t-4 left" src="../../images/png/triangles/4.png")
+            img(class="t-5 right" src="../../images/png/triangles/5.png")
+            img(class="t-8 right-2" src="../../images/png/triangles/8.png")
+            img(class="t-9 left-2" src="../../images/png/triangles/9.png")
+            img(class="t-10 left" src="../../images/png/triangles/10.png")
+            img.logo(src="../../images/png/triangles/w.png")
+          i.icon-back
 
-  body
-    i(class='icon icon-map')
-    script(type="text/javascript" src='../../build/all.js')
+        .v-content
+          p Android işletim sistemini temel alan özelleştirilmiş bir arayüze sahip akıllı TV donanımıdır. Vosu Smart Home, ev kullanıcısına yönelik hayatı kolaylaştıran, afet ve kazalara karşı önlem alabilmeyi sağlayan yazılım ve donanıma sahip aygıtlardan oluşan entegre bir sistemdir.
+          p
+            ul.home-list
+              li Android & Smart TV
+              li Digital Integration
+              li Smart Home Systems   
+              li Domotics
+              li Total Home Solutions
+          .triangles
+            img(class="t-1 right" src="../../images/png/triangles/1.png")
+            img(class="t-2 right" src="../../images/png/triangles/2.png")
+            img(class="t-3 right-2" src="../../images/png/triangles/3.png")
+            img(class="t-4 left" src="../../images/png/triangles/4.png")
+            img(class="t-5 right" src="../../images/png/triangles/5.png")
+            img(class="t-8 right-2" src="../../images/png/triangles/8.png")
+            img(class="t-9 left-2" src="../../images/png/triangles/9.png")
+            img(class="t-10 left" src="../../images/png/triangles/10.png")
+            img.logo(src="../../images/png/triangles/v.png")
+          i.icon-back
+
+        .n-content
+          p Aklınıza gelen video production fikirlerinize sizi destekleyebilecek prodüktörler arayabilir, veya kendi fikrinizi uygun olan bir prodüksiyon ekibine dünyanın neresinde olursanız olun çektirebilirsiniz. Notion’s Motion video prodüksiyon marketi ve online proje yönetim platformudur.
+          p
+            ul.home-list
+              li Video Production Marketplace
+              li Project Management
+              li Independent Film Making  
+              li Animation Studio
+              li Script Engine
+          .triangles
+            img(class="t-1 right" src="../../images/png/triangles/1.png")
+            img(class="t-2 right" src="../../images/png/triangles/2.png")
+            img(class="t-3 right-2" src="../../images/png/triangles/3.png")
+            img(class="t-4 left" src="../../images/png/triangles/4.png")
+            img(class="t-5 right" src="../../images/png/triangles/5.png")
+            img(class="t-8 right-2" src="../../images/png/triangles/8.png")
+            img(class="t-9 left-2" src="../../images/png/triangles/9.png")
+            img(class="t-10 left" src="../../images/png/triangles/10.png")
+            img.logo(src="../../images/png/triangles/n.png")
+          i.icon-back
+
+        .t-content
+          p Sizin hatırlamayı istediğiniz notlarınızı hangi duygunuza ait ise o duygunun başlığında toparlar ve uygun duygu durumunuzda size hatırlatır. Tasknight gün içerisinde aklınızda uçuşan düşünceleri düzene sokmak için geliştirilmiş bir yapay zeka projesidir.
+          p
+            ul.home-list
+              li Artificial Intellegence
+              li Mobile App
+              li Emotion Recognation 
+              li Deep Learning
+              li Task Management
+          .triangles
+            img(class="t-1 right" src="../../images/png/triangles/1.png")
+            img(class="t-2 right" src="../../images/png/triangles/2.png")
+            img(class="t-3 right-2" src="../../images/png/triangles/3.png")
+            img(class="t-4 left" src="../../images/png/triangles/4.png")
+            img(class="t-5 right" src="../../images/png/triangles/5.png")
+            img(class="t-8 right-2" src="../../images/png/triangles/8.png")
+            img(class="t-9 left-2" src="../../images/png/triangles/9.png")
+            img(class="t-10 left" src="../../images/png/triangles/10.png")
+            img.logo(src="../../images/png/triangles/t.png")
+          i.icon-back

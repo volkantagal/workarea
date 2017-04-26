@@ -1,11 +1,20 @@
 $bower-path: "../../bower_components";
 
-@import "../../bower_components/font-awesome-sass/assets/stylesheets/_font-awesome.scss";
+@import 'common/variabless.scss';
+
+@import "../../bower_components/bootstrap/dist/css/bootstrap.min.css";
+@import "../../bower_components/bootstrap/dist/css/bootstrap-theme.min.css";
+@import '../fonts/AvenirNextLTPro/scss/Avenir.scss';
 @import '../fonts/myfont/scss/myfont.scss';
 
+@import 'common/mixins.scss';
 @import 'common/normalize.scss';
+@import 'common/custom.scss';
+
 @import 'sprite/sprite.scss';
 
-.icon-email {
-  @include sprite($chrome);
-}
+@import 'partial/partial';
+
+@import 'pages/homepage/homepage';
+@import 'pages/services/services';
+@import 'pages/contact/contact';

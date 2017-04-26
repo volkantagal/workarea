@@ -81,6 +81,13 @@ gulp.task('concat', function() {
     .pipe(gulp.dest('./build/'));
 });
 
+gulp.task('vendors', function() {
+  return gulp.src(['./bower_components/jquery/dist/jquery.min.js',
+    './bower_components/jquery.easing/js/jquery.easing.min.js'])
+    .pipe(concat('vendors.js'))
+    .pipe(gulp.dest('./build/'));
+});
+
 // Sprite Tasks
 
 var imgPath = {
@@ -162,10 +169,10 @@ gulp.task('fonts', function(callback) {
 });
 
 gulp.task('serve', function(callback) {
-  runSequence(['views', 'sass', 'copy'], ['babel', 'browserify', 'concat'], 'webserver')
+  runSequence(['views', 'sass', 'copy'], ['babel', 'browserify', 'concat', 'vendors'], 'webserver')
 
   return watch(['./styles/scss/**/*.scss', './scripts/**/*.js', './views/pug/**/*.pug'], function () {
-      runSequence(['views', 'sass', 'copy'], ['babel', 'browserify', 'concat'])
+      runSequence(['views', 'sass', 'copy'], 'babel', 'browserify', 'concat', 'vendors')
   });
 });
 

@@ -1,0 +1,53 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin app-transition($transition: all .2s ease-in) {
+	-moz-transition:    $transition;
+	-o-transition:      $transition;
+	-webkit-transition: $transition;
+}
+
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin all-center {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  @include transform(translateY(-50%) translateX(-50%));
+}
+
+@mixin linear-gradient($args...) {
+  background-image: -o-linear-gradient($args); 
+  background-image: -moz-linear-gradient($args); 
+  background-image: -webkit-linear-gradient($args); 
+  background-image: linear-gradient($args); 
+}

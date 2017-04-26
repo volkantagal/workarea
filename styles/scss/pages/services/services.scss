@@ -1,0 +1,236 @@
+/* Standard syntax */
+@keyframes left-3 {
+  0%   { @include transform(rotate(0)); }
+  15%  { @include transform(rotate(-90deg)); }
+  25%  { @include transform(rotate(-180deg)); }
+  40%  { @include transform(rotate(-270deg)); }
+  50% { @include transform(rotate(-360)); }
+  65%   { @include transform(rotate(-270)); }
+  75%  { @include transform(rotate(-180deg)); }
+  85%  { @include transform(rotate(-90deg)); }
+  100%  { @include transform(rotate(0deg)); }
+}
+
+@keyframes left-4 {
+  0%   { @include transform(rotate(0)); }
+  15%  { @include transform(rotate(-90deg)); }
+  25%  { @include transform(rotate(-180deg)); }
+  40%  { @include transform(rotate(-270deg)); }
+  50% { @include transform(rotate(-360)); }
+  65%   { @include transform(rotate(-270)); }
+  75%  { @include transform(rotate(-180deg)); }
+  85%  { @include transform(rotate(-90deg)); }
+  100%  { @include transform(rotate(0deg)); }
+}
+
+@keyframes right-3 {
+  0%   { @include transform(rotate(0)); }
+  15%  { @include transform(rotate(90deg)); }
+  25%  { @include transform(rotate(180deg)); }
+  40%  { @include transform(rotate(270deg)); }
+  50% { @include transform(rotate(360)); }
+  65%   { @include transform(rotate(270)); }
+  75%  { @include transform(rotate(180deg)); }
+  85%  { @include transform(rotate(90deg)); }
+  100%  { @include transform(rotate(0deg)); }
+}
+
+@keyframes right-4 {
+  0%   { @include transform(rotate(0)); }
+  15%  { @include transform(rotate(90deg)); }
+  25%  { @include transform(rotate(180deg)); }
+  40%  { @include transform(rotate(270deg)); }
+  50% { @include transform(rotate(360)); }
+  65%   { @include transform(rotate(270)); }
+  75%  { @include transform(rotate(180deg)); }
+  85%  { @include transform(rotate(90deg)); }
+  100%  { @include transform(rotate(0deg)); }
+}
+
+.services {
+	max-width: 1200px;
+	width: auto;
+	position: relative;
+
+	.page-container {
+		.col-sm-12 {
+			@media only screen and (max-width: 480px) {
+				padding: 0px;
+			}
+		}
+	}
+
+	.content {
+		font-size: 16px;
+
+		@media only screen and (max-width: 480px) {
+			margin-top: 16px !important;
+			font-size: 14px;
+		}
+	}
+
+	.services-list {
+		padding: 0px;
+		margin: 0px;
+
+		li {
+			display: block;
+			list-style: none;
+			font-size: 16px;
+
+			@media only screen and (max-width: 480px) {
+				font-size: 14px;
+			}
+		}
+	}
+
+	i.shape {
+		position: absolute;
+		left: 100%;
+
+		img {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+
+			&.left {
+				-webkit-animation: left-3 155s infinite; /* Safari 4.0 - 8.0 */
+	    	animation: left-3 155s infinite;
+	    	animation-timing-function: linear, ease;
+			}
+
+			&.left-2 {
+				-webkit-animation: left-4 125s infinite; /* Safari 4.0 - 8.0 */
+	    	animation: left-4 125s infinite;
+	    	animation-timing-function: linear, ease;
+			}
+
+			&.right {
+				-webkit-animation: right-3 105s infinite; /* Safari 4.0 - 8.0 */
+	    	animation: right-3 105s infinite;
+	    	animation-timing-function: linear, ease;
+			}
+
+			&.right-2 {
+				-webkit-animation: right-4 125s infinite; /* Safari 4.0 - 8.0 */
+	    	animation: right-4 125s infinite;
+	    	animation-timing-function: linear, ease;
+			}
+		}
+
+		&.left1 {
+			top: 296px;
+    	left: 92px;
+		}
+
+		&.left2 {
+			top: 55px;
+    	left: 143px;
+		}
+
+		&.left3 {
+			top: 233px;
+    	left: 305px;
+		}
+
+		&.left4 {
+			top: 33px;
+    	left: 483px;
+		}
+
+		&.left5 {
+			top: 286px;
+    	left: 413px;
+		}
+
+		&.left6 {
+			top: 402px;
+    	left: 500px;
+		}
+
+		&.left7 {
+			top: 452px;
+    	left: 439px;
+		}
+
+		&.left8 {
+			top: 608px;
+    	left: 430px;
+		}
+
+		&.right1 {
+			top: 211px;
+    	left: 644px;
+		}
+
+		&.right2 {
+			top: 364px;
+    	left: 641px;
+		}
+
+		&.right3 {
+			top: 450px;
+    	left: 679px;
+		}
+
+		&.right4 {
+			top: 351px;
+    	left: 603px;
+		}
+
+		&.right5 {
+			top: 351px;
+    	left: 603px;
+		}
+
+		&.right6 {
+			top: 374px;
+    	left: 753px;
+		}
+
+		&.right7 {
+			top: 269px;
+    	left: 829px;
+		}
+
+		&.right8 {
+			top: 218px;
+    	left: 833px;
+		}
+
+		&.right9 {
+			top: 274px;
+    	left: 829px;
+		}
+
+		&.right10 {
+			top: 7px;
+    	left: 1009px;
+		}
+
+		&.right11 {
+			top: 477px;
+    	left: 939px;
+		}
+
+		&.right12 {
+			top: 532px;
+    	left: 870px;
+		}
+
+		&.right13 {
+			top: 154px;
+    	left: 1021px;
+		}
+
+		&.right14 {
+			top: 396px;
+    	left: 1091px;
+		}
+
+		&.right15 {
+			top: 396px;
+    	left: 1091px;
+		}
+	}
+}

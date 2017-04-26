@@ -1,0 +1,443 @@
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  0%   { opacity: .5; }
+  25%  { opacity: .8; }
+  50%  { opacity: 1; }
+  75%  { opacity: .8; }
+  100% { opacity: .5; }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+  0%   { opacity: .5; }
+  25%  { opacity: .8; }
+  50%  { opacity: 1; }
+  75%  { opacity: .8; }
+  100% { opacity: .5; }
+}
+
+/* Standard syntax */
+@keyframes left {
+  0%   { @include transform(rotate(0)); }
+  25%  { @include transform(rotate(-2deg)); }
+  50%  { @include transform(rotate(-7deg)); }
+  75%  { @include transform(rotate(-5deg)); }
+  100% { @include transform(rotate(0)); }
+}
+
+@keyframes left-2 {
+  0%   { @include transform(rotate(0)); }
+  25%  { @include transform(rotate(-8deg)); }
+  50%  { @include transform(rotate(-25deg)); }
+  75%  { @include transform(rotate(-6deg)); }
+  100% { @include transform(rotate(0)); }
+}
+
+@keyframes right {
+  0%   { @include transform(rotate(0)); }
+  25%  { @include transform(rotate(5deg)); }
+  50%  { @include transform(rotate(10deg)); }
+  75%  { @include transform(rotate(5deg)); }
+  100% { @include transform(rotate(0)); }
+}
+
+@keyframes right-2 {
+  0%   { @include transform(rotate(0)); }
+  25%  { @include transform(rotate(25deg)); }
+  50%  { @include transform(rotate(33deg)); }
+  75%  { @include transform(rotate(22deg)); }
+  100% { @include transform(rotate(0)); }
+}
+
+#pageTitle {
+	@include horizontal-center;
+	width: 100%;
+	top: 0;
+
+	.text-center {
+		@media only screen and (max-width : 480px) {
+			text-align: left !important;
+		}
+	}
+}
+
+.homepage {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+	.page-container {
+		.caption {
+			@media only screen and (max-width : 768px) {
+				text-align: center;
+			}
+
+			@media only screen and (max-width : 480px) {
+				text-align: left;
+				margin-top: 32px !important;
+				font-size: 16px;
+			}
+		}
+	}
+
+	[class*='-content'] {
+		@include opacity(0);
+		padding-right: 50%;
+		position: absolute;
+		top: 464px;
+
+		@media only screen and (max-width : 480px) {
+			padding-right: 0px;
+  	}
+
+		&.active {
+			@include app-transition(all 1.8s ease-out);
+			@include opacity(1);
+			top: 160px;
+			z-index: 1;
+
+			@media only screen and (max-width : 480px) {
+				top: 72px;
+			}
+		}
+
+		p {
+			font-size: 16px;
+
+			@media only screen and (max-width : 480px) {
+				font-size: 14px;
+	  	}
+		}
+
+		img, .triangles {
+			@include vertical-center;
+			right: 0px;
+		}
+
+		.triangles {
+			width: 50%;
+			height: 310px;
+
+			@media only screen and (max-width : 480px) {
+			  width: 100%;
+		    height: 310px;
+		    top: 100%;
+		    z-index: -1;
+    	}
+
+			img {
+				&.t-3 {
+					right: 0;
+			    top: -10px;
+			    width: 312px;
+			    z-index: 9;
+				}
+
+				&.t-9 {
+					top: 16px;
+			    right: 57px;
+			    width: 397px;
+			    z-index: 8;
+				}
+
+				&.t-2 {
+					width: 383px;
+					top: 98px;
+			    right: 136px;
+			    z-index: 7;
+				}
+
+				&.t-5 {
+					top: -136px;
+			    right: 257px;
+			    width: 272px;
+			    z-index: 6;
+				}
+
+				&.t-1 {
+					top: -109px;
+			    right: 113px;
+			    width: 240px;
+			    z-index: 5;
+				}
+
+				&.t-4 {
+					top: 100px;
+			    right: 219px;
+			    width: 340px;
+			    z-index: 4;
+				}
+
+				&.t-8 {
+					top: 90px;
+			    right: 29px;
+			    width: 250px;
+			    z-index: 3;
+				}
+
+				&.t-10 {
+					top: 20px;
+			    right: 369px;
+			    width: 250px;
+			    z-index: 2;
+				}
+
+				&.logo {
+					@include all-center;
+					z-index: 10;
+
+					@media only screen and (max-width : 480px) {
+						width: 20%;
+					}
+				}
+
+				&.left {
+					-webkit-animation: left 6s infinite; /* Safari 4.0 - 8.0 */
+		    	animation: left 6s infinite;
+		    	animation-timing-function: ease-in;
+				}
+
+				&.right {
+					-webkit-animation: right 8s infinite; /* Safari 4.0 - 8.0 */
+		    	animation: right 8s infinite;
+		    	animation-timing-function: ease-in;
+				}
+
+				&.left-2 {
+					-webkit-animation: left 7s infinite; /* Safari 4.0 - 8.0 */
+		    	animation: left 7s infinite;
+		    	animation-timing-function: ease-in;
+				}
+
+				&.right-2 {
+					-webkit-animation: right 12s infinite; /* Safari 4.0 - 8.0 */
+		    	animation: right 12s infinite;
+		    	animation-timing-function: ease-in;
+				}
+			}
+		}
+
+		.home-list {
+			padding: 0px;
+			margin: 0px;
+			margin-top: 48px;
+
+			li {
+				display: block;
+				margin-bottom: 8px;
+				list-style: none;
+				font-size: 16px;
+
+				@media only screen and (max-width : 480px) {
+					font-size: 14px;
+		  	}
+			}
+		}
+
+		.icon-back {
+			@include opacity(0);
+			width: 40px;
+			height: 22px;
+			display: block;
+			margin-top: 64px;
+			background-image: url('../../images/png/back.png');
+			background-repeat: no-repeat;
+			cursor: pointer;
+
+			&.active {
+				@include app-transition(all 1s ease-out);
+				@include opacity(1);
+			}
+		}
+	}
+}
+
+.content-area {
+	@include horizontal-center;
+	width: 100%;
+	top: 350px;
+	z-index: 1;
+
+	@media only screen and (max-width : 480px) {
+		width: 100%;
+		top: 200px;
+	}
+
+	.shapes {
+		width: 25%;
+		display: inline-block;
+		padding-left: 11%;
+		font-size: 100px;
+		position: absolute;
+		left: 25%;
+		cursor: pointer;
+
+		@media only screen and (min-width : 1024px) and (max-width: 1199px) {
+			padding-left: 12%;
+		}
+
+		@media only screen and (min-width : 481px) and (max-width: 768px) {
+			padding-left: 14%;
+		}
+
+		@media only screen and (max-width : 768px) {
+			width: 50%;
+		}
+
+		@media only screen and (max-width : 480px) {
+			width: 145px;
+			padding-left: 85px;
+			font-size: 48px;
+  	}
+
+		&.active {
+			@include app-transition(all 1.6s linear);
+			padding-left: 7%;
+			font-size: 48px;
+
+			@media only screen and (min-width : 481px) and (max-width: 768px) {
+				padding-left: 11%;
+			}
+
+			@media only screen and (max-width : 480px) {
+				top: 0px !important;
+				padding-left: 54px;
+				font-size: 28px;
+	  	}
+
+			.shapes-small {
+				@include app-transition(all 1.6s linear);
+				font-size: 48px;
+			}
+
+			canvas {
+				@media only screen and (min-width : 481px) and (max-width: 768px) {
+					@include app-transition(all 1s linear);
+					left: -25%;
+				}
+
+				@media only screen and (max-width : 480px) {
+					left: -97px;
+				}
+			}
+		}
+
+		&:first-child {
+			left: 0;
+			z-index: 3;
+
+			@media only screen and (max-width : 768px) {
+				left: 15%;
+			}
+
+			@media only screen and (max-width : 480px) {
+				left: 0px;
+    	}
+		}
+
+		&:nth-child(2) {
+			left: 25%;
+			z-index: 2;
+
+			@media only screen and (max-width : 768px) {
+				left: 61%;
+			}
+
+			@media only screen and (max-width : 480px) {
+				left: initial;
+				right: 0px;
+    	}
+		}
+
+		&:nth-child(3) {
+			left: 50%;
+			z-index: 1;
+
+			@media only screen and (max-width : 768px) {
+				top: 270px;
+				left: 15%;
+			}
+
+			@media only screen and (max-width : 480px) {
+				top: 170px;
+				left: 0px;
+    	}
+		}
+
+		&:last-child {
+			left: 75%;
+
+			@media only screen and (max-width : 768px) {
+				top: 270px;
+				left: 61%;
+			}
+
+			@media only screen and (max-width : 480px) {
+				top: 170px;
+				left: initial;
+				right: 0px;
+    	}
+		}
+
+		canvas {
+			@include vertical-center;
+			@include transform(rotate(-3deg) translateY(-50%));
+			position: absolute;
+			left: -31%;
+			-webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    	animation: mymove 5s infinite;
+    	animation-timing-function: linear, ease;
+
+    	@media only screen and (min-width : 1024px) and (max-width: 1199px) {
+				padding-left: 14%;
+				left: -51%;
+			}
+
+			@media only screen and (min-width : 481px) and (max-width: 768px) {
+				left: -30%;
+			}
+
+			@media only screen and (max-width : 480px) {
+				left: -95px;
+	  	}
+
+    	&:hover {
+    		@include opacity(1);
+    	}
+		}
+
+		&:hover {
+			&:before {
+				@include app-transition;
+				@include opacity(1);
+				-webkit-animation: none;
+				animation: none;
+			}
+		}
+
+		span {
+			position: relative;
+			z-index: 1;
+			visiblity: visible;
+			white-space: nowrap;
+
+			&.first {
+				@include vertical-center;
+			}
+
+			&.none-visible {
+				@include opacity(0);
+				position: absolute;
+				top: -9999px;
+			} 
+		}
+
+		.shapes-small {
+			font-size: 72px;
+
+			@media only screen and (max-width : 480px) {
+				font-size: 32px;
+			}
+		}
+	}
+}
