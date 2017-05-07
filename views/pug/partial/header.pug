@@ -6,12 +6,14 @@
           a.icon-logo(href="index.html")
         .col-lg-10.col-md-10.col-sm-10.col-xs-4
           ul.menu
-            li.active
+            li(class=(activeItem === 'homepage') ? 'active' : '')
               a(href="index.html") Products
-            li
+            li(class=(activeItem === 'services') ? 'active' : '')
               a(href="services.html") Services
-            li
+            li(class=(activeItem === 'solutions') ? 'active' : '')
               a(href="solutions.html")  Solutions
-            li
-              a(href="contact.html") Contacts
+            li(class=(activeItem === 'career') ? 'active' : '')
+              a(href="career.html") Career
+            li(class=(activeItem === 'contact') ? 'active' : '')
+              a(href="contact.html") Contact
       i.icon-hamburger

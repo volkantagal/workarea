@@ -1,12 +1,15 @@
 extends layout/layout.pug
+block variables
+  - var activeMenu = 'homepage'
 block content
   .homepage
+    include partial/animate-bg
     .container
       .page-container
         #pageTitle
           .text-center.small-text
-            | Connecting creative, knowledge and commerce to transform brands and grow businesses
-          .caption.m48
+            | Connecting creative, knowledge and commerce to transform brands and grow businesses.
+          .caption
             | Featured Works
         .content-area
           .shapes 
@@ -29,14 +32,14 @@ block content
             canvas#t(width="130" height="190")
 
         .w-content
-          p İşletmelerin, kurum veya kuruluşların, ziyaretçilerine sundukları internet hizmetini, bir sosyal ağ hizmetine dönüştüren, web tabanlı müşteri ilişkileri otomasyonu ve yeni nesil elektronik pazarlama aracıdır.
+          p Wisitor is a new age marketing tool and web based CRM utilizing the already in use Wi-Fi networks of businesses and corporations and transforming it into a social Wi-Fi.
           p
             ul.home-list
-              li Hızlı ve Güvenli İnternet Erişimi
-              li Sosyal WiFi
-              li İstatistik Yönetimi    
-              li Kesintisiz İletişim Ağı
-              li Sosyal Yönelim Analizleri
+              li Fast and secure internet connection
+              li Social Wi-Fi
+              li Statistics management    
+              li Un disturbed comminications network
+              li Social trends analysis
           .triangles
             img(class="t-1 right" src="../../images/png/triangles/1.png")
             img(class="t-2 right" src="../../images/png/triangles/2.png")
@@ -50,7 +53,7 @@ block content
           i.icon-back
 
         .v-content
-          p Android işletim sistemini temel alan özelleştirilmiş bir arayüze sahip akıllı TV donanımıdır. Vosu Smart Home, ev kullanıcısına yönelik hayatı kolaylaştıran, afet ve kazalara karşı önlem alabilmeyi sağlayan yazılım ve donanıma sahip aygıtlardan oluşan entegre bir sistemdir.
+          p Vosu is a smart TV peripheral with a specialized interface that is based on the Android operating system. Vosu Smart Home is a hardware and software integrated system that eases the life of an end user and also an early warning system for natural disastrous.
           p
             ul.home-list
               li Android & Smart TV
@@ -71,7 +74,7 @@ block content
           i.icon-back
 
         .n-content
-          p Aklınıza gelen video production fikirlerinize sizi destekleyebilecek prodüktörler arayabilir, veya kendi fikrinizi uygun olan bir prodüksiyon ekibine dünyanın neresinde olursanız olun çektirebilirsiniz. Notion’s Motion video prodüksiyon marketi ve online proje yönetim platformudur.
+          p With Notion’s Motion you can search for producers for your video production ideas or regardless of wherever you are you can find a production group that is inclined to your production idea. Notion’s Motion is a production market and an online project management platform.
           p
             ul.home-list
               li Video Production Marketplace
@@ -92,10 +95,10 @@ block content
           i.icon-back
 
         .t-content
-          p Sizin hatırlamayı istediğiniz notlarınızı hangi duygunuza ait ise o duygunun başlığında toparlar ve uygun duygu durumunuzda size hatırlatır. Tasknight gün içerisinde aklınızda uçuşan düşünceleri düzene sokmak için geliştirilmiş bir yapay zeka projesidir.
+          p Tasknight is an AI project developed to categorize and store your scattering ideas during the day. Categorizes your notes under the corresponding emotions and when you are in the suitable mood, reminds you.
           p
             ul.home-list
-              li Artificial Intellegence
+              li Artificial Intelligence
               li Mobile App
               li Emotion Recognation 
               li Deep Learning

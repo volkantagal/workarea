@@ -133,9 +133,9 @@ gulp.task('iconfont', function(){
 // Views Tasks
 
 gulp.task('views', function buildHTML() {
-  return gulp.src('./views/pug/**/*.pug')
+  return gulp.src('./views/pug/*.pug')
   .pipe(pug())
-  .pipe(gulp.dest('./views/html/'));
+  .pipe(gulp.dest('./'));
 });
 
 // Server
@@ -145,7 +145,7 @@ gulp.task('webserver', function() {
     .pipe(webserver({
       livereload: true,
       directoryListing: true,
-      open: '/views/html/index.html',
+      open: '/index.html',
       https: false
     }));
 });

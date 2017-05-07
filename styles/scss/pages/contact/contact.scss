@@ -1,21 +1,68 @@
 .contact {
-		position: relative;
-		background-color: #1C1B1B;
-		posistion: relative;
-		z-index: 1;
+	position: relative;
+	background-color: #1C1B1B;
+	z-index: 1;
+	padding-bottom: 32px;
 
-		padding-bottom: 64px;
+	@media only screen and (max-width: 480px) {
+		padding-bottom: 32px;
+		padding-right: 16px;
+		padding-left: 16px;
+	}
 
-		@media only screen and (max-width: 480px) {
-			padding-bottom: 32px;
+	.no-padding {
+		padding: 0px;
+	}
+
+	.orfs {
+		margin-left: -90px;
+    height: 200px;
+
+		@media only screen and (max-width: 1024px) {
+			height: 100px;
+			margin-top: 0px;
+			position: absolute;
+			top: 0px;
+			right: 64px;
 		}
 
+		@media only screen and (max-width: 480px) {
+			right: 0px;
+		}
+	}
+
 	.page-container {
+		@include clearfix;
 		height: auto !important;
+		margin-top: 0px;
+
+		@media only screen and (max-width: 768px) {
+			margin-top: 32px;
+		}
 
 		.col-sm-12 {
 			@media only screen and (max-width: 480px) {
 				padding: 0px;
+			}
+		}
+
+		.caption {
+			@media only screen and (max-width: 1023px) {
+				font-size: 24px;
+			}
+		}
+
+		.no-padding {
+			@media only screen and (max-width: 1023px) {
+				padding: 0px;
+			}
+		}
+
+		.content {
+			&.m48 {
+				@media only screen and (max-width: 1024px) {
+					margin-top: 0px;
+				}
 			}
 		}
 	}
@@ -24,22 +71,34 @@
 		font-size: 22px;
 
 		@media only screen and (max-width: 480px) {
-			margin-top: 24px !important;
 			font-size: 16px;
 		}
 	}
 
 	.adresses {
+		@include clearfix;
+
+		@media only screen and (max-width: 700px) {
+			margin-top: 0px;
+		}
+
+		.container {
+			@media only screen and (max-width: 1024px) {
+				padding: 0 16px;
+			}
+		}
+
+		.adress {
+			padding-right: 24px;
+		}
 
 		.adress-column {
+			@include clearfix;
+			padding-bottom: 32px;
 			color: #D8D8D8;
+			line-height: 2;
 
 			@media only screen and (max-width: 1024px) {
-				padding-left: 0px;
-				padding-bottom: 16px;
-			}
-
-			&:first-child {
 				padding-left: 0px;
 			}
 
@@ -49,7 +108,14 @@
 		}
 
 		.social {
+			@include clearfix;
+
+			@media only screen and (max-width: 1024px) {
+				margin-bottom: 24px;
+			}
+
 			ul {
+				@include clearfix;
 				padding: 0px;
 				margin: 0px;
 
@@ -76,6 +142,20 @@
 				}
 			}
 		}
+
+		.pin {
+			display: inline;
+			position: relative;
+
+			&:before {
+				@include sprite($contact);
+				content: '';
+				display: block;
+				position: absolute;
+				top: -5px;
+				left: 8px;
+			}
+		}
 	}
 }
 
@@ -84,16 +164,32 @@
 	.bottom-image {
 		width: calc(100% - 342px);
 		height: auto;
+
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+			position: absolute;
+			bottom: 0px;
+		}
 	}
 }
 
 .contact-right {
-	position: absolute;
+	width: 343px;
+	height: 100%;
 	top: 74px;
+	position: absolute;
 	right: 0px;
+	z-index: 1;
+
+	@media only screen and (max-width: 768px) {
+		display: none;
+	}
 
 	.bottom-image {
 		width: 100%;
-		height: auto;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		right: 0px;
 	}
 }

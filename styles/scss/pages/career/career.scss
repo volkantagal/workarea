@@ -1,0 +1,54 @@
+.page-container.car {
+	margin-top: 0px !important;
+
+	@media only screen and (max-width : 1023px) {
+		height: auto !important;
+	}
+}
+
+.title-container {
+	padding: 0 16px;
+    font-size: 32px;
+    margin-top: -50px;
+
+    @media only screen and (max-width : 1023px) {
+		font-size: 24px;
+	}
+}
+
+.career-container {
+	@include clearfix;
+	@include vertical-center;
+	width: 100%;
+	background-color: #333333;
+
+	@media only screen and (max-width : 1023px) {
+		@include transform(none);
+		margin-top: 72px;
+		top: initial;
+		position: static;
+	}
+
+	.desc {
+		padding: 32px 0;
+		font-size: 16px;
+
+		@media only screen and (max-width : 1023px) {
+			padding: 32px 0px;
+		}
+	}
+
+	.image {
+		overflow: hidden;
+
+		@media only screen and (max-width : 1023px) {
+			padding-bottom: 32px;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+}

@@ -1,4 +1,5 @@
-<!doctype html>
+block variables
+doctype html
 html(lang="en")
 head
   meta(charset="utf-8")
@@ -14,9 +15,11 @@ head
   <![endif]-->
 
   body
+    - var activeItem = activeMenu
     include ../partial/header
 
     block content
 
+    i.overlay
     script(type="text/javascript" src='../../build/vendors.js')
     script(type="text/javascript" src='../../build/all.js')

@@ -1,37 +1,47 @@
 extends layout/layout.pug
+block variables
+  - var activeMenu = 'contact'
 block content
   .container.contact
     .page-container
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12
-        .caption.m48 Contacts
-      .col-lg-9.col-md-9.col-sm-12.col-xs-12
-        .content.m48
-          p We’d like to hear from you.
-          p hello@orfs.com.tr
+      .col-lg-9.col-md-8.col-sm-9.col-xs-12.no-padding
         .adresses.m24
-          .col-lg-4.adress-column
-            .phone +90 212 264 0909
-            .adress.m8
-              span ORFS Group
-              span 4. Levent Org. İzzettin Aksalur Cad.
-              span No: 10D/7 34330 Beşiktaş/İstanbul
-          .col-lg-4.adress-column
-            .phone +61 447 921 751
-            .adress.m8
-              span ORFS Group
-              span 407/116 Joynton Ave. Zetland
-              span 2017 Sydney / Nsw State
-          .col-lg-4.adress-column
-            .phone Social Media
-            .social.m8
-              ul
-                li
-                  a.facebook(href="javascript:;" target="_blank")
-                li
-                  a.twitter(href="javascript:;" target="_blank")
-                li
-                  a.linkedin(href="javascript:;" target="_blank")
-  .contact-bottom
-    img.bottom-image(src="../../images/contact-bottom.png")
+          .container
+            .row
+              .col-lg-4.adress-column.no-padding
+                .caption.m48 Orfs Group
+                img.orfs.m16(src="../../images/svg/orfs.svg")
+              .col-lg-8.no-padding
+                .container
+                  .row
+                    .col-lg-12.no-padding
+                      .content.m48
+                        p We’d like to hear from you.
+                        p hello@orfs.com.tr
+                    .col-lg-6.adress-column.no-padding
+                      .phone +90 212 264 0909
+                      .adress.m8
+                        span ORFS Group
+                        span 4. Levent Org. İzzettin Aksalur Cad.
+                        span No: 10D/7 34330 Beşiktaş/İstanbul
+                        i.pin
+                    .col-lg-6.adress-column.no-padding
+                      .phone +61 447 921 751
+                      .adress.m8
+                        span ORFS Group
+                        span 407/116 Joynton Ave. Zetland
+                        span 2017 Sydney / Nsw State
+                        i.pin
+                    .col-lg-12.no-padding
+                      .social
+                        ul
+                          li
+                            a.facebook(href="https://www.facebook.com/orfsgroup/" target="_blank")
+                          li
+                            a.twitter(href="https://twitter.com/orfsgroup/" target="_blank")
+                          li
+                            a.linkedin(href="https://www.linkedin.com/company-beta/15222374/" target="_blank")
   .contact-right
     img.bottom-image(src="../../images/contact-right.png")
+  .contact-bottom
+    img.bottom-image(src="../../images/contact-bottom.png")

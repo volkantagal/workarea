@@ -21,7 +21,7 @@ var Homepage = function () {
 		self.animateOptions = [125, 125, 115, 5.3, 1];
 		self.intervalData = [];
 
-		if ($(window).width() < 481) {
+		if ($(window).width() < 768) {
 			self.options[2] = 70;
 			self.animateOptions[2] = 70;
 		}
@@ -43,6 +43,8 @@ var Homepage = function () {
 
 		$('.icon-hamburger').on('click', function () {
 			$('ul.menu').hasClass('active') ? $('ul.menu').removeClass('active') : $('ul.menu').addClass('active');
+
+			$('i.overlay').hasClass('active') ? $('i.overlay').removeClass('active') : $('i.overlay').addClass('active');
 		});
 	}
 
@@ -68,10 +70,10 @@ var Homepage = function () {
 			ctx.arc(options[0], options[1], options[2], options[3], options[4]);
 			ctx.closePath();
 
-			var grad1 = ctx.createRadialGradient(200, 200, 200, 0, 0, 0);
+			var grad1 = ctx.createLinearGradient(0, 0, 200, 0, 0, 0);
 
-			grad1.addColorStop(0, "#1d2b43");
-			grad1.addColorStop(1, "#1c5e6b");
+			grad1.addColorStop(1, "#1f2944");
+			grad1.addColorStop(0.5, "#1b5964");
 
 			ctx.fillStyle = grad1;
 			ctx.fill();
@@ -144,7 +146,7 @@ var Homepage = function () {
 			var self = this;
 			var smallSize = 32;
 
-			if ($(window).width() < 481) {
+			if ($(window).width() < 768) {
 				smallSize = 24;
 			}
 
@@ -162,7 +164,7 @@ var Homepage = function () {
 				var elementTop = $('#pageTitle').offset().top;
 				var elementLeft = $('#pageTitle').offset().left;
 
-				if ($(window).width() < 481) {
+				if ($(window).width() < 768) {
 					$('.content-area').addClass('active').animate({ top: 24 }, 2000, 'easeOutQuad');
 				} else {
 					$('.content-area').addClass('active').animate({ top: 72 }, 2000, 'easeOutQuad');
